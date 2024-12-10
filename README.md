@@ -101,3 +101,5 @@ Clone this repository.
 Compile the project using a C++17-compatible compiler.
 Run the executable.
 Follow the game prompts to play Monopoly.
+
+NOTE: To conserve space, the docs file (doxygen output) was not uploaded due to limit of 100 files on github. 
