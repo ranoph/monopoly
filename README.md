@@ -45,6 +45,8 @@ ________________________________________________________________________________
 
 MonopolyGame (V2 FINAL VERSION --> EVERYTHING LOCATED OUTSIDE OF GAME FOLDER)
 
+Project Duration: Aug 2024 - Dec 2024
+
 MonopolyGame is a fully functional, object-oriented implementation of the classic Monopoly board game written in C++. This project is designed to demonstrate expertise in advanced programming concepts, including:
 
 Classes: Modular and reusable components for game entities (e.g., Bank, Board, Player, Property).
