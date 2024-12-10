@@ -1,0 +1,254 @@
+\doxysection{Bank Class Reference}
+\hypertarget{class_bank}{}\label{class_bank}\index{Bank@{Bank}}
+
+
+Manages the game\textquotesingle{}s banking system and resources.  
+
+
+
+
+{\ttfamily \#include $<$Bank.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bank_a95972e189e85e1a572348811a8bf0d57}\label{class_bank_a95972e189e85e1a572348811a8bf0d57} 
+{\bfseries Bank} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing bank resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_abcc1628a0d2ca758edc4392e22e5b97c}{set\+Board}} (\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}b)
+\begin{DoxyCompactList}\small\item\em Sets the game board reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bank_a2fe7b4e71e57042c4149131569423aca}{get\+Board}} () const
+\begin{DoxyCompactList}\small\item\em Gets the game board reference. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_afee062065d8277257196fc24a7ba1356}{sell\+Property}} (\mbox{\hyperlink{class_player}{Player}} \&buyer, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Processes property sale to player. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_a08e4513e5f19013d83e067a31da6f3b3}{auction\+Property}} (std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \&players, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Conducts property auction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_acfb99b8e3cd9193e6a143bf20016d8b4}{buy\+House}} (\mbox{\hyperlink{class_player}{Player}} \&player, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Processes house purchase. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_a305d189bd50cd3227b287523ae51eca9}{buy\+Hotel}} (\mbox{\hyperlink{class_player}{Player}} \&player, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Processes hotel purchase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_a261acff693ae3afb624b35e1be1b7986}{return\+House}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Returns house to bank inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_a15a6193bd60a665d4f87a18b4e900a6e}{return\+Hotel}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Returns hotel to bank inventory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bank_a408f0d760f8244c5751c9636145f876b}{handle\+Bankruptcy}} (\mbox{\hyperlink{class_player}{Player}} \&bankrupt\+Player, \mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}creditor\+Player=nullptr)
+\begin{DoxyCompactList}\small\item\em Handles player bankruptcy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_a084cf58927077bd4c2d6b963e60a60cf}{mortgage\+Property}} (\mbox{\hyperlink{class_player}{Player}} \&player, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Processes property mortgage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bank_a98809255ad182dfd259efa2fc2d88344}{unmortgage\+Property}} (\mbox{\hyperlink{class_player}{Player}} \&player, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$ property)
+\begin{DoxyCompactList}\small\item\em Processes property unmortgage. \end{DoxyCompactList}\item 
+\Hypertarget{class_bank_a7d9615cf05b411e16d9a32d4669d6ec0}\label{class_bank_a7d9615cf05b411e16d9a32d4669d6ec0} 
+void {\bfseries save\+State} ()
+\begin{DoxyCompactList}\small\item\em Saves current bank state. \end{DoxyCompactList}\item 
+\Hypertarget{class_bank_addca012b4a95bd3af5d13640f97fb19a}\label{class_bank_addca012b4a95bd3af5d13640f97fb19a} 
+void {\bfseries undo\+State} ()
+\begin{DoxyCompactList}\small\item\em Reverts to previous bank state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the game\textquotesingle{}s banking system and resources. 
+
+Handles property transactions, development, and resource management 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bank_a08e4513e5f19013d83e067a31da6f3b3}\index{Bank@{Bank}!auctionProperty@{auctionProperty}}
+\index{auctionProperty@{auctionProperty}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{auctionProperty()}{auctionProperty()}}
+{\footnotesize\ttfamily \label{class_bank_a08e4513e5f19013d83e067a31da6f3b3} 
+bool Bank\+::auction\+Property (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::reference\+\_\+wrapper$<$ \mbox{\hyperlink{class_player}{Player}} $>$ $>$ \&}]{players}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Conducts property auction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players} & Vector of participating players \\
+\hline
+{\em property} & \doxylink{class_property}{Property} being auctioned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Auction success 
+\end{DoxyReturn}
+\Hypertarget{class_bank_a305d189bd50cd3227b287523ae51eca9}\index{Bank@{Bank}!buyHotel@{buyHotel}}
+\index{buyHotel@{buyHotel}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{buyHotel()}{buyHotel()}}
+{\footnotesize\ttfamily \label{class_bank_a305d189bd50cd3227b287523ae51eca9} 
+bool Bank\+::buy\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Processes hotel purchase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} buying hotel \\
+\hline
+{\em property} & \doxylink{class_property}{Property} for development \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Purchase success 
+\end{DoxyReturn}
+\Hypertarget{class_bank_acfb99b8e3cd9193e6a143bf20016d8b4}\index{Bank@{Bank}!buyHouse@{buyHouse}}
+\index{buyHouse@{buyHouse}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{buyHouse()}{buyHouse()}}
+{\footnotesize\ttfamily \label{class_bank_acfb99b8e3cd9193e6a143bf20016d8b4} 
+bool Bank\+::buy\+House (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Processes house purchase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} buying house \\
+\hline
+{\em property} & \doxylink{class_property}{Property} for development \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Purchase success 
+\end{DoxyReturn}
+\Hypertarget{class_bank_a2fe7b4e71e57042c4149131569423aca}\index{Bank@{Bank}!getBoard@{getBoard}}
+\index{getBoard@{getBoard}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{getBoard()}{getBoard()}}
+{\footnotesize\ttfamily \label{class_bank_a2fe7b4e71e57042c4149131569423aca} 
+\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*} Bank\+::get\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the game board reference. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to game board 
+\end{DoxyReturn}
+\Hypertarget{class_bank_a408f0d760f8244c5751c9636145f876b}\index{Bank@{Bank}!handleBankruptcy@{handleBankruptcy}}
+\index{handleBankruptcy@{handleBankruptcy}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{handleBankruptcy()}{handleBankruptcy()}}
+{\footnotesize\ttfamily \label{class_bank_a408f0d760f8244c5751c9636145f876b} 
+void Bank\+::handle\+Bankruptcy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{bankrupt\+Player}{, }\item[{\mbox{\hyperlink{class_player}{Player}} \texorpdfstring{$\ast$}{*}}]{creditor\+Player}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Handles player bankruptcy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bankrupt\+Player} & \doxylink{class_player}{Player} declaring bankruptcy \\
+\hline
+{\em creditor\+Player} & Optional creditor player \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bank_a084cf58927077bd4c2d6b963e60a60cf}\index{Bank@{Bank}!mortgageProperty@{mortgageProperty}}
+\index{mortgageProperty@{mortgageProperty}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{mortgageProperty()}{mortgageProperty()}}
+{\footnotesize\ttfamily \label{class_bank_a084cf58927077bd4c2d6b963e60a60cf} 
+bool Bank\+::mortgage\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Processes property mortgage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} mortgaging property \\
+\hline
+{\em property} & \doxylink{class_property}{Property} being mortgaged \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mortgage success 
+\end{DoxyReturn}
+\Hypertarget{class_bank_a15a6193bd60a665d4f87a18b4e900a6e}\index{Bank@{Bank}!returnHotel@{returnHotel}}
+\index{returnHotel@{returnHotel}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{returnHotel()}{returnHotel()}}
+{\footnotesize\ttfamily \label{class_bank_a15a6193bd60a665d4f87a18b4e900a6e} 
+void Bank\+::return\+Hotel (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Returns hotel to bank inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & \doxylink{class_property}{Property} removing hotel \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bank_a261acff693ae3afb624b35e1be1b7986}\index{Bank@{Bank}!returnHouse@{returnHouse}}
+\index{returnHouse@{returnHouse}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{returnHouse()}{returnHouse()}}
+{\footnotesize\ttfamily \label{class_bank_a261acff693ae3afb624b35e1be1b7986} 
+void Bank\+::return\+House (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_standard_property}{Standard\+Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Returns house to bank inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & \doxylink{class_property}{Property} removing house \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bank_afee062065d8277257196fc24a7ba1356}\index{Bank@{Bank}!sellProperty@{sellProperty}}
+\index{sellProperty@{sellProperty}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{sellProperty()}{sellProperty()}}
+{\footnotesize\ttfamily \label{class_bank_afee062065d8277257196fc24a7ba1356} 
+bool Bank\+::sell\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{buyer}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Processes property sale to player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buyer} & \doxylink{class_player}{Player} purchasing property \\
+\hline
+{\em property} & \doxylink{class_property}{Property} being purchased \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transaction success 
+\end{DoxyReturn}
+\Hypertarget{class_bank_abcc1628a0d2ca758edc4392e22e5b97c}\index{Bank@{Bank}!setBoard@{setBoard}}
+\index{setBoard@{setBoard}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{setBoard()}{setBoard()}}
+{\footnotesize\ttfamily \label{class_bank_abcc1628a0d2ca758edc4392e22e5b97c} 
+void Bank\+::set\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_board}{Board}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the game board reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to game board \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bank_a98809255ad182dfd259efa2fc2d88344}\index{Bank@{Bank}!unmortgageProperty@{unmortgageProperty}}
+\index{unmortgageProperty@{unmortgageProperty}!Bank@{Bank}}
+\doxysubsubsection{\texorpdfstring{unmortgageProperty()}{unmortgageProperty()}}
+{\footnotesize\ttfamily \label{class_bank_a98809255ad182dfd259efa2fc2d88344} 
+bool Bank\+::unmortgage\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_player}{Player}} \&}]{player}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_property}{Property}} $>$}]{property}{}\end{DoxyParamCaption})}
+
+
+
+Processes property unmortgage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & \doxylink{class_player}{Player} unmortgaging property \\
+\hline
+{\em property} & \doxylink{class_property}{Property} being unmortgaged \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unmortgage success 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Monpoly\+Game/Bank.\+h\item 
+Monpoly\+Game/Bank.\+cpp\end{DoxyCompactItemize}
