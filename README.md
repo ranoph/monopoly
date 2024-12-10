@@ -43,7 +43,7 @@ NetBeans IDE
 Version Control (Git)
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-MonopolyGame (V2 FINAL VERSION --> EVERYTHING LOCATED OUTSIDE OF GAME FOLDER)
+MonopolyGame (V2 FINAL VERSION --> EVERYTHING LOCATED INSIDE MonopolyGame.zip)
 
 Project Duration: Aug 2024 - Dec 2024
 
@@ -101,5 +101,3 @@ Clone this repository.
 Compile the project using a C++17-compatible compiler.
 Run the executable.
 Follow the game prompts to play Monopoly.
-
-NOTE: To conserve space, the docs file (doxygen output) was not uploaded due to limit of 100 files on github. 
